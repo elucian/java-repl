@@ -4,6 +4,7 @@ class Main {
   private static Calculator.IntegerMath addition;
   private static Calculator.IntegerMath subtraction;
   private static Calculator myApp;
+
   public static void print_menu() {
     clear();
     out.println("-".repeat(30));
@@ -12,6 +13,7 @@ class Main {
     out.println("0 - Clear console");
     out.println("1 - Help");
     out.println("2 - Compute");
+    out.println("3 - Palindrome");
     out.println("9 - Exit");
     out.println("-".repeat(30));
   }
@@ -35,11 +37,15 @@ class Main {
           out.println("""
               This is a calculator,
               Work in progress.
-              Enter a option (0 to 9) 
+              Enter a option (0 to 9)
               for a quick test.""");
           break;
         case 2:
           compute();
+          break;
+        case 3:
+          Palindrome.run(
+              "murder for a jar of red rum");
           break;
         case 9:
           break;
@@ -82,7 +88,7 @@ class Main {
   }
 
   static void clear() {
-    //clear console
+    // clear console
     out.print("\033[H\033[2J");
     out.flush();
   }
