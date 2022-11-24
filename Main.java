@@ -14,6 +14,7 @@ class Main {
     out.println("1 - Help");
     out.println("2 - Compute");
     out.println("3 - Palindrome");
+    out.println("4 - Varargs");
     out.println("9 - Exit");
     out.println("-".repeat(30));
   }
@@ -47,6 +48,8 @@ class Main {
           Palindrome.run(
               "murder for a jar of red rum");
           break;
+        case 4:
+          varargs(); break;
         case 9:
           break;
         default:
@@ -59,6 +62,15 @@ class Main {
     out.println("Have a nice day!");
   }
 
+  /* test Varargs */
+  private static void varargs() {
+     out.print("test1: ");
+     Varargs.test(1,2,3,4);
+     out.print("test2: ");
+     Varargs.test(8,12,24);
+     out.print("done");
+  }
+  /* option 2 calculator */
   private static void compute() {
     out.print("Operation:{ +, - }:>");
     String o = System.console().readLine();
@@ -81,14 +93,15 @@ class Main {
     out.println();
   }
 
+  /* read user option selection */
   static Integer read_option() {
     out.print("option:>");
     String s = System.console().readLine();
     return Integer.parseInt(s);
   }
 
+  /* cleanup the console window */
   static void clear() {
-    // clear console
     out.print("\033[H\033[2J");
     out.flush();
   }
