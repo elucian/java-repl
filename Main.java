@@ -15,6 +15,7 @@ class Main {
     out.println("2 - Compute");
     out.println("3 - Palindrome");
     out.println("4 - Varargs");
+    out.println("5 - Switch expression"); 
     out.println("9 - Exit");
     out.println("-".repeat(30));
   }
@@ -49,7 +50,11 @@ class Main {
               "murder for a jar of red rum");
           break;
         case 4:
-          varargs(); break;
+          varargs();
+          break;
+        case 5:
+          SwitchXP.run();
+          break;
         case 9:
           break;
         default:
@@ -64,12 +69,13 @@ class Main {
 
   /* test Varargs */
   private static void varargs() {
-     out.print("test1: ");
-     Varargs.test(1,2,3,4);
-     out.print("test2: ");
-     Varargs.test(8,12,24);
-     out.print("done");
+    out.print("test1: ");
+    Varargs.test(1, 2, 3, 4);
+    out.print("test2: ");
+    Varargs.test(8, 12, 24);
+    out.print("done");
   }
+
   /* option 2 calculator */
   private static void compute() {
     out.print("Operation:{ +, - }:>");
