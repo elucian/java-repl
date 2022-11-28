@@ -17,6 +17,7 @@ class Main {
     out.println("4 - Varargs");
     out.println("5 - Switch expression");
     out.println("6 - Filter test");
+    out.println("7 - Runnable test");
     out.println("9 - Exit");
     out.println("-".repeat(30));
   }
@@ -58,6 +59,9 @@ class Main {
           break;
         case 6:
           Filter.test();
+          break;
+        case 7:
+          Runnables.test(); 
           break;
         case 9:
           break;
