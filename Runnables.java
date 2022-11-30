@@ -1,8 +1,7 @@
 public class Runnables {
   /*
-   * this program do not run in parallel
-   * actually we demonstrate just how to implement
-   * runable interface using labda functions
+   * this program demonstrate how to implement
+   * runable interfaces using labda functions
    */
 
   /* wrapper for puting main thread to sleep */
