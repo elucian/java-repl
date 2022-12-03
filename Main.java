@@ -10,21 +10,21 @@ class Main {
     out.println("-".repeat(30));
     out.println("Options!");
     out.println("-".repeat(30));
-    out.println("0 - Clear console");
-    out.println("1 - Help");
+    out.println("0 - Exit");
+    out.println("1 - Clear console");
     out.println("2 - Compute");
     out.println("3 - Palindrome");
     out.println("4 - Varargs");
     out.println("5 - Switch expression");
     out.println("6 - Filter test");
     out.println("7 - Runnable test");
-    out.println("8 - Stream test");   
-    out.println("9 - Exit");
+    out.println("8 - Stream test");
+    out.println("9 - Interface demo");   
     out.println("-".repeat(30));
   }
 
   public static void main(String[] args) {
-    int option = 0; // no option
+    int option = 1; // no option
     // prepare caclulator & operators
     myApp = new Calculator();
 
@@ -36,46 +36,36 @@ class Main {
     do {
       switch (option) {
         case 0:
-          print_menu();
-          break;
+          break; //exit          
         case 1:
-          out.println("""
-              This is a calculator,
-              Work in progress.
-              Enter a option (0 to 9)
-              for a quick test.""");
-          break;
+          print_menu(); break;
         case 2:
-          compute();
-          break;
+          compute(); break;
         case 3:
           Palindrome.run(
               "murder for a jar of red rum");
           break;
         case 4:
-          varargs();
-          break;
+          varargs(); break;
         case 5:
-          SwitchXP.run();
-          break;
+          SwitchXP.run(); break;
         case 6:
-          Filter.test();
-          break;
+          Filter.test(); break;
         case 7:
-          Runnables.test(); 
-          break;
+          Runnables.test(); break;
         case 8:
-          Stream.test(); 
-          break;
+          Stream.test(); break;
         case 9:
-          break;
+          InterfaceDemo.test(); break;
+        case 10:
+          InterfaceDefa.test(); break;
         default:
           out.format("option %d " +
               "not implemented.%n", option);
           break;
       }
       option = read_option();
-    } while (option < 9);
+    } while (option > 0);
     out.println("Have a nice day!");
   }
 
@@ -115,7 +105,7 @@ class Main {
   static Integer read_option() {
     out.print("option:>");
     String s = System.console().readLine();
-    return Integer.parseInt(s);
+    return Integer.decode(s);
   }
 
   /* cleanup the console window */

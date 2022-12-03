@@ -11,7 +11,8 @@ public class Stream {
     /* visit elements in parallel */
     listOfNumbers.parallelStream().forEach(
       number -> System.out.println(
-        number + " " + Thread.currentThread().getName()
+        number + " " +
+        Thread.currentThread().getName()
       )
     );
   }
